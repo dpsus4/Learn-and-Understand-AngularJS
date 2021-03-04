@@ -14,6 +14,7 @@ myApp.controller('mainController', ['$scope', function ($scope) {
     // // $scope.getname();
 
     // console.log($scope.getname());
+    // test
 }]);
 
 var searchPeople = function(firstName, lastName, height, age, occupation) {
