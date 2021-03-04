@@ -1,9 +1,20 @@
 // MODULE
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ["ngMessages", "ngResource"]);
 
 // CONTROLLERS
-myApp.controller('mainController', ['$scope', function ($scope) {
+myApp.controller('mainController', ['$scope', '$log', '$filter', function ($scope, $log, $filter, $resource) {
+    $scope.name = "John";
+    $scope.formattedname = $filter("uppercase")($scope.name);
     
+    $log.info($scope.name);
+    $log.info($scope.formattedname);
+    // $log.log("Hello");
+    // $log.info("This is some information");
+    // $log.warn("Warning!");
+    // $log.debug("Debug");
+    // $log.error("Error!");
+
+    // console.log($log);
     // $scope.name = "Tony";
     // $scope.occupation = "Coder";
     
@@ -21,4 +32,5 @@ var searchPeople = function(firstName, lastName, height, age, occupation) {
     return "Jane Doe";
 }
 
-console.log(searchPeople(1, 2, 3, 4, 5));
+// console.log(angular.injector().annotate(searchPeople));
+// console.log(searchPeople(1, 2, 3, 4, 5));
