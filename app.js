@@ -2,8 +2,9 @@
 var myApp = angular.module('myApp', ["ngMessages", "ngResource"]);
 
 // CONTROLLERS
-myApp.controller('mainController', ['$scope', '$log', '$filter', function ($scope, $log, $filter, $resource) {
+myApp.controller('mainController', ['$scope', '$log', '$filter', "$timeout", function ($scope, $log, $filter, $resource, $timeout) {
     $scope.name = "John";
+    $scope.surname = "Smith";
     $scope.formattedname = $filter("uppercase")($scope.name);
     
     $log.info($scope.name);
