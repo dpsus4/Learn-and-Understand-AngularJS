@@ -13,18 +13,18 @@ myApp.config(function ($routeProvider) {
 });
 
 
-myApp.service("nameService", function() {
+myApp.service("nameService", function () {
     this.name = "John Doe";
 
-    this.namelength = function() {
+    this.namelength = function () {
         return self.name.length;
     };
 });
 
 // CONTROLLERS
-myApp.controller('mainController', ["nameService",'$scope', '$log', '$filter', "$timeout", function (nameService, $scope, $log, $filter, $resource, $timeout) {
+myApp.controller('mainController', ["nameService", '$scope', '$log', '$filter', "$timeout", function (nameService, $scope, $log, $filter, $resource, $timeout) {
     $log.log(nameservice.name);
-    
+
     $scope.name = "John";
     $scope.surname = "Smith";
     $scope.formattedname = $filter("uppercase")($scope.name);
@@ -87,3 +87,9 @@ myApp.controller('secondController', ['$scope', "$location", '$log', '$filter', 
     // console.log($scope.getname());
     // test
 }]);
+
+myApp.directive("searchResult", function () {
+    return {
+        template: ""
+    }
+});
